@@ -25,11 +25,16 @@ import com.ibm.research.drl.dpt.providers.masking.AbstractComplexMaskingProvider
 import com.ibm.research.drl.dpt.providers.masking.MaskingProviderFactory;
 import com.ibm.research.drl.dpt.util.JsonUtils;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.security.SecureRandom;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class FHIRMaskingProvider extends AbstractComplexMaskingProvider<String> {
     private final Map<String, FHIRGenericMaskingProvider> maskingProviderMap;
@@ -45,18 +50,6 @@ public class FHIRMaskingProvider extends AbstractComplexMaskingProvider<String> 
     public FHIRMaskingProvider(SecureRandom random, MaskingConfiguration maskingConfiguration, Set<String> maskedFields, MaskingProviderFactory factory) {
         this("fhir", maskingConfiguration, maskedFields, factory);
     }
-
-//    private InputStream loadResource(String name, boolean external) {
-//        if (external) {
-//            try {
-//                return new FileInputStream(name);
-//            } catch (Exception e) {
-//                throw new RuntimeException("unable to load external resource: " + name);
-//            }
-//        }
-//
-//        return this.getClass().getResourceAsStream(name);
-//    }
 
     public static Collection<String> loadRulesForResource(String resourceName, MaskingConfiguration maskingConfiguration) {
         return maskingConfiguration.getStringValueWithPrefixMatch("fhir.maskingConf." + resourceName + ".");
