@@ -4,20 +4,20 @@
   "private": true,
   "dependencies": {
     "FileSaver": "^0.10.0",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^5.2.3",
     "bootstrap-sass": "^3.3.7",
     "font-awesome-sass": "^4.7.0",
     "highcharts": "^6.0.2",
     "lodash": "^4.17.4",
     "lz-string": "^1.4.4",
     "react": "^18.2.0",
-    "react-bootstrap": "^0.31.3",
+    "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
-    "react-redux": "^5.0.6",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
+    "react-redux": "^8.0.5",
+    "react-router": "^6.10.0",
+    "react-router-dom": "^6.10.0",
     "react-router-redux": "^5.0.0-alpha.6",
-    "redux": "^3.7.2",
+    "redux": "^4.2.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "sass": "^1.55.0",
@@ -25,11 +25,9 @@
     "underscore": "^1.9.1"
   },
   "devDependencies": {
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
     "npm-run-all": "^4.1.1",
-    "react-scripts": "^1.0.13",
-    "react-test-renderer": "^16.0.0",
+    "react-scripts": "^5.0.1",
+    "react-test-renderer": "^18.2.0",
     "standard": "*"
   },
   "scripts": {
@@ -42,5 +40,17 @@
     "eject": "react-scripts eject"
   },
   "homepage": ".",
-  "proxy": "http://localhost:8080/"
+  "proxy": "http://localhost:8080/",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
