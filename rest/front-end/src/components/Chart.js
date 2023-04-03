@@ -12,7 +12,7 @@ export default class Chart extends Component {
     }
   }
 
-  componentWillReceiveProps (nextProps) {
+  UNSAFE_componentWillReceiveProps (nextProps) {
     this.chart.update(nextProps.options)
   }
 

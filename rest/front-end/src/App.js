@@ -6,7 +6,6 @@ import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 
 import { Route, Switch } from 'react-router'
-import createHashHistory from 'history/createHashHistory'
 
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
 
@@ -29,7 +28,7 @@ import NavBar from './components/NavBar'
 
 import reducers from './reducers'
 
-const history = createHashHistory()
+const history = require('history').createHashHistory()
 
 const loggerMiddleware = createLogger()
 const router = routerMiddleware(history)

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Route, Redirect, Switch, withRouter } from 'react-router'
+import { Route, Redirect, Routes } from 'react-router'
 
 import { Nav, NavItem } from 'react-bootstrap'
 
@@ -9,6 +9,8 @@ import Identify from './Identify'
 import VulnerabilityDetection from './VulnerabilityDetection'
 import ProtectDataset from './ProtectDataset'
 import Anonymize from './Anonymize'
+
+import { withRouter } from '../utilities'
 
 const separator = {
   marginTop: '10px'
@@ -28,14 +30,14 @@ class Workflow extends Component {
           <NavItem eventKey={5}><i className='fa fa-user-secret' /> Anonymization</NavItem>
         </Nav>
         <div style={separator} />
-        <Switch>
+        <Routes>
           <Route path={this.props.match.path + '/loading'} component={Loading} />
           <Route path={this.props.match.path + '/identify'} component={Identify} />
           <Route path={this.props.match.path + '/risk'} component={VulnerabilityDetection} />
           <Route path={this.props.match.path + '/protect'} component={ProtectDataset} />
           <Route path={this.props.match.path + '/anonymize'} component={Anonymize} />
-          <Redirect from={this.props.match.path} to={this.props.match.path + '/loading'} />
-        </Switch>
+          <Route path={this.props.match.path} render={() => <Redirect to={this.props.match.path + '/loading'} />} />
+        </Routes>
         <div className='btn-group pull-right' data-role='groups'>
           {next}
           <a className='btn btn-primary' onClick={

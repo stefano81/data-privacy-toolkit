@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
+import { withRouter } from '../utilities'
 
 const NotFound = () => (<div>
   <h1>This is not the page you were looking for.</h1>
