@@ -105,12 +105,8 @@ public class IPAddressMaskingProvider implements MaskingProvider {
     }
 
     private String ipv6mask(String identifier) {
-
-        String suffix = "";
-
         int idx = identifier.indexOf('%');
         if (idx > 0) {
-            suffix = identifier.substring(idx);
             identifier = identifier.substring(0, idx);
         }
 

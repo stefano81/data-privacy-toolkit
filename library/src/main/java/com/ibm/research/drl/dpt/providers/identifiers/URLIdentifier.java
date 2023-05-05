@@ -54,8 +54,7 @@ public class URLIdentifier extends AbstractIdentifier {
         }
 
         try {
-            URL u = new URL(value);
-            return true;
+            return null != new URL(value);
         } catch (MalformedURLException ignored) {
             return data.startsWith("www.") || data.startsWith("mail.");
         }
